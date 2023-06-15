@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+@use "~/layouts/components/scss/mixin" as *;
+
+.modal-cart-option {
+
+  // dropdown 공통
+  .dropdown-wrap {
+    & + .dropdown-wrap {
+      margin-top: rem(8);
+
+      .is-selected button::before {
+        content: "(선택)";
+      }
+    }
+  }
+
+  .goods-wrap {
+    display: flex;
+    margin-bottom: rem(16);
+
+    .img-wrap {
+      border-radius: rem(12);
+      height: rem(80);
+      overflow: hidden;
+      width: rem(80);
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .goods-info {
+      margin-left: rem(10);
+      width: calc(100% - rem(90));
+
+      .goods-name {
+        @include eline-clamp(3);
+
+        line-height: 1.5;
+        padding-top: rem(4);
+      }
+    }
+  }
+
+  .option-info {
+    align-items: center;
+    background-color: var(--gray-50);
+    border-radius: rem(12);
+    display: flex;
+    justify-content: space-between;
+    margin: rem(16) 0 rem(32);
+    padding: rem(12);
+
+    .origin-price {
+      color: var(--gray-900);
+      font-size: rem(18);
+      font-weight: 700;
+
+      span {
+        font-size: rem(16);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .gift-option-wrap {
+    margin-bottom: rem(37);
+
+    .gift-title {
+      color: var(--ns-black);
+      display: block;
+      font-size: rem(16);
+      font-weight: 700;
+      margin-bottom: rem(8);
+      padding: rem(4);
+    }
+  }
+
+  .layer-bottom {
+    .btn-wrap {
+      @include button-wrapper;
+    }
+
+    .cancle-btn {
+      @include border-btn-type($color:var(--gray-900), $border-color:var(--gray-300));
+    }
+
+    .change-btn {
+      @include bg-btn-type($bg-color: var(--gray-900));
+    }
+  }
+}

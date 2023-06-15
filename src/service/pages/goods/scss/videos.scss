@@ -1,0 +1,228 @@
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.video-wrap:deep() {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .data-warning {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+
+    &::after {
+      background-color: rgba(0, 0, 0, .2);
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    .alert-content {
+      position: relative;
+      z-index: 2;
+
+      .copy {
+        color: var(--white);
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .btn-alert-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: rem(24);
+
+        button {
+          align-items: center;
+          border: rem(1) solid var(--white);
+          border-radius: rem(8);
+          box-sizing: border-box;
+          display: inline-flex;
+          font-size: rem(14);
+          font-weight: 400;
+          height: rem(32);
+          justify-content: center;
+          width: rem(57);
+
+          + button {
+            margin-left: rem(8);
+          }
+        }
+
+        .btn-cancel {
+          background-color: transparent;
+          color: var(--white);
+        }
+
+        .btn-confirm {
+          background-color: var(--white);
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  .video-js {
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+
+    .vjs-control-bar {
+      align-items: center;
+      background-color: var(--black);
+      height: rem(63);
+      padding: 0 rem(16);
+
+      // 필요없는 기능버튼 none처리
+      .vjs-play-control,
+      .vjs-time-control,
+      .vjs-progress-control,
+      .vjs-picture-in-picture-control {
+        display: none;
+      }
+
+      // fullscreen 버튼 커스텀
+      .vjs-fullscreen-control {
+        position: absolute;
+        right: rem(16);
+        top: 0;
+        width: rem(24);
+
+        .vjs-icon-placeholder {
+          &::before {
+            background: url("/images/icons/common/btn-video-fullscreen.svg") center center no-repeat;
+            background-size: rem(24);
+            content: "";
+          }
+        }
+      }
+
+      // volume 버튼 커스텀
+      .vjs-volume-panel {
+        align-items: center;
+        height: rem(24);
+        width: rem(200);
+
+        // mute
+        .vjs-mute-control {
+          height: rem(24);
+          margin-right: rem(16);
+          width: rem(24);
+
+          .vjs-icon-placeholder {
+            &::before {
+              background: url("/images/icons/common/btn-video-volume.svg") center center no-repeat;
+              background-size: rem(24);
+              content: "";
+            }
+          }
+
+          &.vjs-vol-0 {
+            .vjs-icon-placeholder {
+              &::before {
+                background-image: url("/images/icons/common/btn-video-mute.svg");
+              }
+            }
+          }
+        }
+
+        // volume progress
+        .vjs-volume-control {
+          height: rem(24);
+          width: rem(150);
+
+          .vjs-volume-bar.vjs-slider-horizontal {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .vjs-big-play-button {
+      display: none;
+    }
+
+    .custom-player-controls {
+      .btn-play-pause {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: rem(64);
+        border: 0;
+        cursor: pointer;
+        height: rem(64);
+        left: 50%;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: visibility 0.1s ease(in-expo), opacity 0.1s ease(in-expo);
+        width: rem(64);
+        z-index: 2;
+
+        @include hide-txt;
+
+        &.is-play {
+          background-image: url("/images/icons/common/btn-video-play.svg");
+        }
+
+        &.is-pause {
+          background-image: url("/images/icons/common/btn-video-pause.svg");
+        }
+      }
+
+      .btn-close {
+        background: url("/images/icons/common/btn-video-close.svg") 0 0 no-repeat;
+        background-size: rem(24);
+        cursor: pointer;
+        height: rem(24);
+        position: absolute;
+        right: rem(16);
+        top: rem(16);
+        width: rem(24);
+
+        @include hide-txt;
+      }
+    }
+
+    &.vjs-fullscreen {
+      .vjs-fullscreen-control {
+        .vjs-icon-placeholder {
+          &::before {
+            background-image: url("/images/icons/common/btn-video-reduction.svg");
+          }
+        }
+      }
+    }
+
+    &.vjs-has-started.vjs-user-inactive.vjs-playing {
+      .custom-player-controls {
+        .btn-play-pause {
+          opacity: 0;
+          pointer-events: none;
+          transition: visibility 1s ease(out-expo), opacity 1s ease(out-expo);
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  // desktop
+  #desktop & {
+    .video-js {
+      left: rem(-98);
+      position: absolute;
+      top: 0;
+      width: calc(100% + rem(100));
+    }
+  }
+}

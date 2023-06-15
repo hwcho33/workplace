@@ -1,0 +1,9 @@
+```html
+<template>
+  <video-player 
+    src="http://vjs.zencdn.net/v/oceans.mp4" 
+    poster="//vjs.zencdn.net/v/oceans.png" 
+    :loop="false"
+  />
+</template>
+```

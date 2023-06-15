@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <title>NS COMMON FRONT OFFICE</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" as="style" crossorigin href="/fonts/pretendard/index.css" />
+    <script>
+      ((global) => {
+        const NAME = {
+          ID: {
+            DESKTOP: 'desktop',
+            MOBILE: 'mobile',
+          },
+          CLASS: {
+            IOS: 'app-ios',
+            NOTCH:'app-ios-notch',
+            AOS: 'app-aos'
+          }
+        }
+        const isDesktop = global.navigator.userAgent.match(/ipad|iphone|Android|NS_iOS|NS_ANDROID/i) === null;
+        const isAppIOS = global.navigator.userAgent.match(/NS_iOS/i) !== null
+        const isAppNotch = global.navigator.userAgent.match(/hasNotch/i) !== null
+        const isAppAOS = global.navigator.userAgent.match(/NS_ANDROID/i) !== null
+
+        const setId = (idName) => {
+          global.document.addEventListener('DOMContentLoaded', () => { global.document.body.id = idName })
+        }
+        const setClass = (className) => {
+          global.document.addEventListener('DOMContentLoaded', () => { global.document.body.classList.add(className) })
+        }
+
+        if (isDesktop) { setId(NAME.ID.DESKTOP) }
+        else {
+          if (isAppIOS) { setClass(NAME.CLASS.IOS) }
+          if (isAppNotch) { setClass(NAME.CLASS.NOTCH) }
+          if (isAppAOS) { setClass(NAME.CLASS.AOS) }
+        }
+      })(window);
+    </script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js" integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
+  </head>
+  <body id="mobile">
+    <div id="app"></div>
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+@use "../src/sample/scss/mixins.scss";
+
+.viewport {
+  --viewport-header-height: 48px;
+  --viewport-side-width: 54px;
+
+  display: grid;
+  grid-template-areas: "side header" "side container";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: var(--viewport-header-height) 1fr;
+  min-height: 100vh;
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__side {
+    grid-area: side;
+  }
+
+  @include mixins.responsive(md) {
+    --viewport-header-height: 48px;
+    --viewport-side-width: 220px;
+
+    &--fold-side {
+      --viewport-side-width: 54px;
+    }
+  }
+}

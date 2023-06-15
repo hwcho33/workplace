@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/layouts/components/scss/mixin" as *;
+
+body {
+  min-width: 320px;
+}
+
+body {
+  &#desktop {
+    min-width: $pc-base-width;
+  }
+}
+
+#mobile {
+  .mo-header-wrap {
+    &.home {
+      + .container {
+        min-height: calc(100vh - ($mobile-header-main-height + $mobile-header-menu-height));
+      }
+    }
+
+    &.default {
+      + .container {
+        min-height: calc(100vh - $mobile-header-main-height);
+      }
+
+      + .container {
+        &.only-header-top {
+          min-height: auto;
+        }
+      }
+    }
+
+    &.blank {
+      + .container {
+        min-height: 100vh;
+      }
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: $breakpoint-tablet;
+    min-height: calc(100vh - ($mobile-header-main-height + $mobile-header-menu-height));
+
+    &.full-width {
+      max-width: none;
+      padding: 0;
+    }
+
+    &.header-none {
+      min-height: 100vh;
+    }
+  }
+
+  .layout-contents-wrap {
+    background-color: #ff0;
+    margin: 0 auto;
+    max-width: $breakpoint-tablet;
+    padding: 0 rem(16);
+
+    &.full-width {
+      background-color: #0ff;
+      max-width: none;
+      padding: 0;
+    }
+  }
+}
+
+#desktop {
+  .container {
+    margin: 0 auto;
+    max-width: $pc-base-width;
+    min-height: calc(100vh - ($pc-header-main-height + $pc-header-menu-height + $pc-footer-menu-height + $pc-footer-main-height));
+
+    &.full-width {
+      max-width: none;
+      padding: 0;
+    }
+
+    &.is-gray {
+      background-color: var(--gray-100);
+      max-width: none;
+    }
+
+    &.header-none {
+      min-height: calc(100vh - ($pc-footer-menu-height + $pc-footer-main-height));
+    }
+  }
+
+  .layout-contents-wrap {
+    background-color: #ff0;
+    margin: 0 auto;
+    max-width: $pc-base-width;
+
+    &.full-width {
+      background-color: #0ff;
+      max-width: none;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  html {
+    @include media(fold) {
+      zoom: 0.746;
+    }
+  }
+}

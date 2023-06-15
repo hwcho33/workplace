@@ -1,0 +1,21 @@
+.prose pre {
+  width: 60vw;
+}
+
+.prose pre:not(.shiki) {
+  padding: 0;
+}
+
+.prose strong {
+  color: rgb(233, 72, 72);
+}
+
+.prose .shiki {
+  font-family: "DM Mono", monospace;
+  font-size: 1.15em;
+  line-height: 1.35;
+}
+
+.prose img {
+  width: 100%;
+}

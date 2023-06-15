@@ -1,0 +1,44 @@
+// 일반 통신사
+export const MOBILE_CARRIER_GENERAL_TYPE = {
+  SKT: 'SKT',
+  KTF: 'KTF',
+  LGT: 'LGT'
+} as const
+export type MOBILE_CARRIER_GENERAL_TYPE = (typeof MOBILE_CARRIER_GENERAL_TYPE)[keyof typeof MOBILE_CARRIER_GENERAL_TYPE]
+
+// 알뜰폰 통신사
+export const MOBILE_CARRIER_CHEAP_TYPE = {
+  SKM: 'SKM',
+  KTM: 'KTM',
+  LGM: 'LGM'
+} as const
+export type MOBILE_CARRIER_CHEAP_TYPE = (typeof MOBILE_CARRIER_CHEAP_TYPE)[keyof typeof MOBILE_CARRIER_CHEAP_TYPE]
+
+// 통신사
+export const MOBILE_CARRIER_TYPE = {
+  SKT: MOBILE_CARRIER_GENERAL_TYPE.SKT,
+  KTF: MOBILE_CARRIER_GENERAL_TYPE.KTF,
+  LGT: MOBILE_CARRIER_GENERAL_TYPE.LGT,
+  SKM: MOBILE_CARRIER_CHEAP_TYPE.SKM,
+  KTM: MOBILE_CARRIER_CHEAP_TYPE.KTM,
+  LGM: MOBILE_CARRIER_CHEAP_TYPE.LGM
+} as const
+export type MOBILE_CARRIER_TYPE = (typeof MOBILE_CARRIER_TYPE)[keyof typeof MOBILE_CARRIER_TYPE]
+
+// 동의 타입
+export const AGREE_TYPE = {
+  PERSONAL: 'PERSONAL',
+  DISCERN: 'DISCERN',
+  SERVICE: 'SERVICE',
+  MOBILE_CARRIER: 'MOBILE_CARRIER',
+  THIRDPARTY: 'THIRDPARTY'
+} as const
+export type AGREE_TYPE = (typeof AGREE_TYPE)[keyof typeof AGREE_TYPE]
+
+// 진행타입
+export const PROGRESS_TYPE = {
+  MEMBER_JOIN: 'memberJoin',
+  ORDER_SHEET: 'orderSheet',
+  ADULT_CERT: 'adultCert'
+} as const
+export type PROGRESS_TYPE = (typeof PROGRESS_TYPE)[keyof typeof PROGRESS_TYPE]

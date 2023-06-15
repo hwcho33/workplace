@@ -1,0 +1,88 @@
+@use "../src/sample/scss/mixins.scss";
+
+.context-item {
+  --primary-color: rgb(48 97 187);
+
+  align-items: center;
+  display: flex;
+  height: 40px;
+  min-width: 0;
+  transition: background-color 200ms ease-out;
+
+  @include mixins.mouse-event(hover) {
+    background-color: hsl(0deg 0% 0% / .05);
+  }
+
+  &:nth-child(n+2) {
+    border-top: 1px dashed hsl(0deg 0% 0% / .2);
+  }
+
+  &__body {
+    align-items: center;
+    color: var(--color-base);
+    display: flex;
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1.15;
+    min-width: 0;
+    text-decoration: none;
+
+    @include mixins.button-extends();
+
+    > svg {
+      --icon-display: block;
+      --icon-margin: 0 10px 0 16px;
+      --icon-size: 18px;
+      --icon-color: currentcolor;
+      --icon-stroke: 1.75;
+    }
+
+    > span {
+      display: block;
+      overflow: hidden;
+      padding: 0 20px 0 0;
+      white-space: nowrap;
+    }
+
+    &.active,
+    &.router-link-active {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+  }
+
+  &__favorite {
+    aspect-ratio: 1 / 1;
+    background: none;
+    border: none;
+    border-radius: 0;
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    @include mixins.button-extends();
+
+    @include mixins.mouse-event(active) {
+      opacity: .5;
+    }
+
+    .star {
+      display: block;
+      height: 16px;
+      margin: 0 auto;
+      width: 16px;
+
+      &--line {
+        color: var(--primary-color);
+        stroke-width: 1.5;
+      }
+
+      &--fill {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

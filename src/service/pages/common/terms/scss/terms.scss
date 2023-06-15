@@ -1,0 +1,588 @@
+@charset "UTF-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+.nsmall-terms-wrap {
+  .page-title {
+    border-bottom: rem(1) solid var(--gray-300);
+    font-size: rem(36);
+    font-weight: 700;
+    margin-top: rem(60);
+    padding-bottom: rem(40);
+    text-align: center;
+  }
+
+  .layout-contents-wrap {
+    background-color: transparent !important;
+  }
+
+  h5 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    font-size: rem(16);
+    font-weight: 700;
+    margin-top: rem(32);
+
+    & + ol,
+    & + p {
+      margin-top: rem(16);
+    }
+  }
+
+  li,
+  p,
+  dd,
+  td {
+    color: var(--gray-600);
+    font-size: rem(14);
+    line-height: rem(21);
+  }
+
+  .num_list {
+    li {
+      padding-left: rem(13);
+      text-indent: rem(-13);
+
+      & + li {
+        margin-top: rem(8);
+      }
+    }
+  }
+
+  .num_sublist2 {
+    li {
+      padding-left: rem(6);
+      text-indent: rem(-6);
+    }
+  }
+
+  table {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    font-size: rem(14);
+    margin: rem(16) 0 8px;
+    position: relative;
+    text-indent: 0;
+    width: 100%;
+
+    caption {
+      @include blind;
+
+      position: static;
+    }
+
+    thead {
+      th {
+        background-color: var(--gray-100);
+        border-top: 1px solid var(--gray-300);
+        color: var(--gray-900);
+        text-align: center;
+      }
+    }
+
+    tr {
+      th,
+      td {
+        border-bottom: 1px solid var(--gray-300);
+        border-color: var(--gray-300) !important;
+        border-left: 1px solid var(--gray-300);
+        border-top: none !important;
+        padding: rem(16) rem(8);
+        vertical-align: middle;
+
+        &:first-child {
+          border-left: none !important;
+          border-right: 1px solid var(--gray-300);
+
+          ~ td,
+          th {
+            border-right: 1px solid var(--gray-300);
+          }
+        }
+
+        &:last-child {
+          border-right: none !important;
+        }
+      }
+    }
+  }
+
+  .terms-tab-wrap {
+    & > ul {
+      display: flex;
+
+      li {
+        flex: 1;
+
+        .tab-btn {
+          align-items: center;
+          background-color: none;
+          background-color: var(--ns-white);
+          border: 0;
+          border-bottom: rem(1) solid var(--gray-300);
+          display: flex;
+          font-size: rem(17);
+          font-weight: 500;
+          height: rem(48);
+          justify-content: center;
+          width: 100%;
+        }
+
+        &.is-active {
+          .tab-btn {
+            border-bottom: rem(2) solid var(--gray-900);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .terms-tab-content,
+  .terms-content {
+    padding: rem(16);
+  }
+
+  .past-terms-list {
+    padding-top: rem(60);
+
+    li + li {
+      padding-top: rem(12);
+    }
+
+    a {
+      color: var(--gray-900);
+      font-size: rem(14);
+      line-height: 1;
+      text-decoration: underline;
+    }
+  }
+
+  &.nsmall-terms {
+    .mt20 {
+      margin-top: rem(20);
+    }
+  }
+
+  &.youth-policy {
+    p {
+      color: var(--gray-900);
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+
+    dl {
+      dt {
+        font-weight: 700;
+        line-height: 1.9rem;
+        margin: 2.4rem 0 1.6rem;
+      }
+    }
+  }
+
+  #desktop & {
+    .terms-tab-content,
+    .terms-content {
+      padding: rem(60) 0 rem(200);
+    }
+  }
+}
+
+// 모든 약관 레이어
+.layer-terms-wrap {
+  .button-wrapper {
+    margin-top: rem(40);
+
+    .button {
+      @include bg-btn-type($color: var(--white), $bg-color: var(--gray-900));
+    }
+  }
+
+  .separately-terms {
+    table {
+      thead {
+        tr {
+          th {
+            font-weight: 400;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          th,
+          td {
+            color: var(--gray-600);
+            font-weight: 400;
+            padding: rem(16) rem(10);
+            word-break: break-all;
+          }
+        }
+      }
+    }
+
+    .bullet-list {
+      li {
+        padding-left: rem(10);
+        position: relative;
+
+        &::before {
+          background-color: var(--gray-600);
+          border-radius: rem(3);
+          content: "";
+          height: rem(3);
+          left: 0;
+          position: absolute;
+          top: rem(8);
+          width: rem(3);
+        }
+
+        & + li {
+          margin-top: rem(8);
+        }
+      }
+    }
+
+    .mark {
+      color: var(--gray-500);
+      font-size: rem(11);
+      font-weight: 500;
+      line-height: 1.3;
+      padding-left: rem(12);
+      position: relative;
+
+      span {
+        display: inline-block;
+        margin-top: rem(4);
+      }
+
+      &::before {
+        content: "※";
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+
+  .area-terms {
+    dl {
+      dt {
+        color: var(--gray-900);
+        font-size: rem(16);
+        font-weight: 700;
+
+        & + dd {
+          margin-top: rem(16);
+        }
+      }
+
+      dd {
+        color: var(--gray-700);
+        font-size: rem(14);
+        margin-top: rem(4);
+
+        ul {
+          margin-top: rem(4);
+
+          li {
+            & + li {
+              margin-top: rem(4);
+            }
+          }
+        }
+      }
+
+      & ~ dl {
+        margin-top: rem(32);
+      }
+    }
+
+    ul {
+      li {
+        color: var(--ns-gray600);
+        font-size: rem(14);
+      }
+    }
+
+    a {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    & > dl {
+      & > dd {
+        & > dl {
+          & > dd {
+            margin-top: rem(4);
+
+            & > dl {
+              margin-top: rem(32);
+            }
+          }
+
+          & ~ dl {
+            margin-top: rem(32);
+          }
+        }
+
+        & + dd {
+          margin-top: rem(32);
+        }
+      }
+    }
+
+    table {
+      border: 1px solid #ccc;
+      border-bottom: none;
+      font-size: rem(14);
+      margin: rem(16) 0 8px;
+      position: relative;
+      table-layout: fixed;
+      text-indent: 0;
+      width: 100%;
+
+      caption {
+        @include blind;
+      }
+
+      thead {
+        th {
+          background-color: var(--gray-100);
+          border-top: 1px solid var(--gray-300);
+          color: var(--gray-900);
+          text-align: center;
+        }
+      }
+
+      tr {
+        th,
+        td {
+          border-bottom: 1px solid var(--gray-300);
+          border-color: var(--gray-300) !important;
+          border-left: 1px solid var(--gray-300);
+          border-top: none !important;
+          padding: rem(16) rem(8);
+          vertical-align: middle;
+        }
+      }
+
+      &::before,
+      &::after {
+        background-color: #fff;
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: rem(2);
+      }
+
+      &::before {
+        left: rem(-1);
+      }
+
+      &::after {
+        right: rem(-1);
+      }
+    }
+
+    [class*="mark-"] {
+      dd {
+        padding-left: rem(12);
+        position: relative;
+      }
+
+      ul {
+        li {
+          padding-left: rem(12);
+          position: relative;
+        }
+      }
+    }
+
+    [class*="dash"] {
+      dd,
+      li {
+        &::before {
+          content: "-";
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
+      }
+
+      &:not(ul,dl) {
+        padding-left: rem(12);
+        position: relative;
+
+        &::before {
+          content: "-";
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+
+    [class*="kor"] {
+      dd {
+        padding-left: 2rem;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          left: 0;
+          position: absolute;
+          width: 2rem;
+        }
+
+        &:nth-child(2) {
+          &::before {
+            content: "가.";
+          }
+        }
+
+        &:nth-child(3) {
+          &::before {
+            content: "나.";
+          }
+        }
+
+        &:nth-child(4) {
+          &::before {
+            content: "다.";
+          }
+        }
+
+        &:nth-child(5) {
+          &::before {
+            content: "라.";
+          }
+        }
+
+        &:nth-child(6) {
+          &::before {
+            content: "마.";
+          }
+        }
+
+        &:nth-child(7) {
+          &::before {
+            content: "바.";
+          }
+        }
+
+        &:nth-child(8) {
+          &::before {
+            content: "사.";
+          }
+        }
+
+        &:nth-child(9) {
+          &::before {
+            content: "아.";
+          }
+        }
+
+        &:nth-child(10) {
+          &::before {
+            content: "자.";
+          }
+        }
+
+        &:nth-child(11) {
+          &::before {
+            content: "차.";
+          }
+        }
+      }
+    }
+
+    [class*="num"] {
+      counter-reset: number-list;
+
+      & > dd,
+      & > li {
+        padding-left: rem(16);
+        position: relative;
+
+        &::before {
+          content: counter(number-list) ".";
+          counter-increment: number-list;
+          display: inline-block;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: rem(12);
+        }
+
+        &:nth-child(2) {
+          &::before {
+            content: "1.";
+          }
+        }
+
+        &:nth-child(3) {
+          &::before {
+            content: "2.";
+          }
+        }
+
+        &:nth-child(4) {
+          &::before {
+            content: "3.";
+          }
+        }
+
+        &:nth-child(5) {
+          &::before {
+            content: "4.";
+          }
+        }
+
+        &:nth-child(6) {
+          &::before {
+            content: "5.";
+          }
+        }
+
+        &:nth-child(7) {
+          &::before {
+            content: "6.";
+          }
+        }
+
+        &:nth-child(8) {
+          &::before {
+            content: "7.";
+          }
+        }
+      }
+    }
+
+    [class*="icon"] {
+      dd,
+      li {
+        padding-left: rem(16) !important;
+        position: relative;
+
+        i {
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  #desktop &.layer-wrap {
+    .layer-container {
+      max-width: rem(700);
+    }
+  }
+}

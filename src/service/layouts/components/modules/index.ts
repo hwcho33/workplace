@@ -1,0 +1,6 @@
+export { default as TopMenu } from './top-menu.vue'
+export { default as BottomNavigation } from './bottom-navigation.vue'
+export { default as FloatingRight } from './floating-right.vue'
+export { default as TopBanner } from './top-banner.vue'
+export { default as PcTopMenu } from './p.top-menu.vue'
+export { default as PcCategory } from './p.category.vue'

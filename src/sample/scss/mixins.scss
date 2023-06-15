@@ -1,0 +1,86 @@
+$dir: "/fonts";
+
+@mixin font-init($type, $weight-name, $weight) {
+  @font-face {
+    font-family: $type;
+    font-style: normal;
+    font-weight: $weight;
+    src:
+      local("#{$type}"),
+      local("#{$type} #{$weight-name}"),
+      url("#{$dir}/#{$type}/#{$type}-#{$weight-name}.woff2") format("woff2");
+  }
+}
+// === Layout
+// zero margin start and end unit
+@mixin side-zero-margin() {
+  > * {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ratio
+@mixin ratio($w, $h) {
+  @supports (aspect-ratio: 1 / 1) {
+    aspect-ratio: $w / $h;
+  }
+}
+
+// responsive
+@mixin responsive($range) {
+  @if ($range == sm) { @media (min-width: 576px) { @content;}}
+
+  @else if ($range == md) { @media (min-width: 768px) { @content;}}
+
+  @else if ($range == lg) { @media (min-width: 992px) { @content;}}
+
+  @else if ($range == xl) { @media (min-width: 1200px) { @content;}}
+
+  @else if ($range == xxl) { @media (min-width: 1600px) { @content;}}
+
+  @else if ($range == xxxl) { @media (min-width: 2000px) { @content;}}
+}
+
+// === Button
+// button touch options
+@mixin button-extends() {
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+}
+// hover event
+@mixin mouse-event($mode) {
+  @if ($mode == hover) {
+    @media (hover: hover) {
+      &:hover { @content;}
+    }
+  }
+
+  @else if ($mode == active) {
+    &:active { @content;}
+  }
+}
+
+// === Typography
+// single line text
+@mixin text-single-line() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// === ETC
+// background blur
+@mixin background-blur($size) {
+  @supports (backdrop-filter: blur($size)) {
+    backdrop-filter: blur($size);
+    @content;
+  }
+}

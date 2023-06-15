@@ -1,0 +1,1 @@
+function e(){return{onBeforeEnter:e=>{e.style.height="0"},onEnter:e=>{e.style.height=e.scrollHeight+"px"},onBeforeLeave:e=>{e.style.height=e.scrollHeight+"px"},onLeave:e=>{e.style.height="0"}}}export{e as u};

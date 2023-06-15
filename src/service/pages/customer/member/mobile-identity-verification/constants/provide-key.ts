@@ -1,0 +1,1 @@
+export const SHARE_PAGE_STATE_KEY = 'SHARE_PAGE_STATE_KEY'

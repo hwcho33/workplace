@@ -1,0 +1,596 @@
+[{
+	"구분": "공통",
+	"화면명": "메인",
+	"화면ID": "SID_FO_CM_007<br>SID_FO_CM_012<br>SID_FO_CM_063<br>SID_FO_CM_011<br>SID_FO_CM_019<br>SID_FO_CM_008<br>SID_FO_CM_013<br>SID_FO_CM_064<br>SID_FO_CM_028",
+	"상태": "최종검수완료",
+	"PATH": "/"
+},
+{
+	"구분": "공통",
+	"화면명": "개인정보처리방침",
+	"화면ID": "SID_FO_CM_020",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/policy/privacy-policy"
+},
+{
+	"구분": "공통",
+	"화면명": "청소년 보호정책",
+	"화면ID": "SID_FO_CM_021",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/policy/youth-policy"
+},
+{
+	"구분": "공통",
+	"화면명": "소비자분쟁해결메인",
+	"화면ID": "SID_FO_CM_022",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/policy/consumer-policy"
+},
+{
+	"구분": "공통",
+	"화면명": "소비자분쟁 해결기준",
+	"화면ID": "SID_FO_CM_023",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/policy/consumer-policy"
+},
+{
+	"구분": "공통",
+	"화면명": "소비자 기본법",
+	"화면ID": "SID_FO_CM_024",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/policy/consumer-policy"
+},
+{
+	"구분": "공통",
+	"화면명": "이용약관메인",
+	"화면ID": "SID_FO_CM_025<br>SID_FO_CM_026<br>SID_FO_CM_027",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/terms/nsmall-terms"
+},
+{
+	"구분": "공통",
+	"화면명": "앱으로보기",
+	"화면ID": "SID_FO_CM_006",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "공통",
+	"화면명": "(P)주소찾기",
+	"화면ID": "SID_FO_CM_016",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "공통",
+	"화면명": "(P)검색결과",
+	"화면ID": "SID_FO_CM_060",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer?search=true"
+},
+{
+	"구분": "공통",
+	"화면명": "(P)검색결과없음",
+	"화면ID": "SID_FO_CM_061",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer?search=true&empty=true"
+},
+{
+	"구분": "공통",
+	"화면명": "(P)나머지주소입력",
+	"화면ID": "SID_FO_CM_062",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer?detail=true"
+},
+{
+	"구분": "공통",
+	"화면명": "광고성정보(PUSH)수신동의",
+	"화면ID": "SID_FO_CM_005",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "공통",
+	"화면명": "로딩인디케이터",
+	"화면ID": "SID_FO_CM_015",
+	"상태": "Rework",
+	"PATH": "/publishing/goods/detail-loading"
+},
+{
+	"구분": "공통",
+	"화면명": "404에러",
+	"화면ID": "SID_FO_CM_017",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/system/404-error"
+},
+{
+	"구분": "공통",
+	"화면명": "500에러",
+	"화면ID": "SID_FO_CM_065",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/system/500-error"
+},
+{
+	"구분": "공통",
+	"화면명": "네트워크 오류 안내",
+	"화면ID": "SID_FO_CM_066",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/system/network-error"
+},
+{
+	"구분": "공통",
+	"화면명": "505에러",
+	"화면ID": "SID_FO_CM_067",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/system/505-error"
+},
+{
+	"구분": "공통",
+	"화면명": "시스템 점검",
+	"화면ID": "SID_FO_CM_018",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/system/system-check"
+},
+{
+	"구분": "고객",
+	"화면명": "회원가입(메인)",
+	"화면ID": "SID_FO_CU_001",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/join"
+},
+{
+	"구분": "고객",
+	"화면명": "일반 회원가입",
+	"화면ID": "SID_FO_CU_002",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/join-form-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "이용약관",
+	"화면ID": "SID_FO_CU_003",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "고객",
+	"화면명": "개인정보 수집 및 이용",
+	"화면ID": "SID_FO_CU_026",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "고객",
+	"화면명": "마케팅 정보 수집 및 이용",
+	"화면ID": "SID_FO_CU_027",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "고객",
+	"화면명": "아이디 입력 > 비밀번호 입력",
+	"화면ID": "SID_FO_CU_030",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/join-form-step1"
+},
+{
+	"구분": "고객",
+	"화면명": "이름 입력 > 휴대폰 번호 입력 > 생년월일 입력 > 성별입력",
+	"화면ID": "SID_FO_CU_031",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/join-form-step2"
+},
+{
+	"구분": "고객",
+	"화면명": "(P)약관체크",
+	"화면ID": "SID_FO_CU_032",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/customer/member/join-form"
+},
+{
+	"구분": "고객",
+	"화면명": "회원가입 완료",
+	"화면ID": "SID_FO_CU_004",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/join-complete"
+},
+{
+	"구분": "고객",
+	"화면명": "간편 회원가입(네이버 인증완료 가입페이지)-1",
+	"화면ID": "SID_FO_CU_010",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/simple-join"
+},
+{
+	"구분": "고객",
+	"화면명": "간편 회원가입(네이버 인증완료 가입페이지)-2",
+	"화면ID": "SID_FO_CU_011",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/simple-certify-complete"
+},
+{
+	"구분": "고객",
+	"화면명": "간편 회원가입(네이버 인증완료 가입페이지)-3",
+	"화면ID": "SID_FO_CU_012",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/simple-certify-complete?connect=false"
+},
+{
+	"구분": "고객",
+	"화면명": "본인인증 (TV고객 통합가입 시)",
+	"화면ID": "SID_FO_CU_019",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/identity-verification"
+},
+{
+	"구분": "고객",
+	"화면명": "본인인증 (비회원 구매 시)",
+	"화면ID": "SID_FO_CU_028",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/customer/member/identity-verification?nonMember=true"
+},
+{
+	"구분": "고객",
+	"화면명": "본인인증 (성인상품 구매 시)",
+	"화면ID": "SID_FO_CU_029",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/customer/member/identity-verification?adult=true"
+},
+{
+	"구분": "고객",
+	"화면명": "본인인증 (회원정보 수정 시)",
+	"화면ID": "SID_FO_CU_039",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/customer/member/identity-verification"
+},
+{
+	"구분": "고객",
+	"화면명": "휴대폰 본인인증하기",
+	"화면ID": "SID_FO_CU_020",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "개인정보이용동의",
+	"화면ID": "SID_FO_CU_021",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "고유식별정보처리동의",
+	"화면ID": "SID_FO_CU_022",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "서비스이용약관동의",
+	"화면ID": "SID_FO_CU_023",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "통신사이용약관동의",
+	"화면ID": "SID_FO_CU_024",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "제3자 정보제공동의",
+	"화면ID": "SID_FO_CU_025",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-pc"
+},
+{
+	"구분": "고객",
+	"화면명": "이름 입력 > 주민등록번호 입력 > 통신사 선택 > 본인인증 동의",
+	"화면ID": "SID_FO_CU_037",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-step1"
+},
+{
+	"구분": "고객",
+	"화면명": "휴대폰 번호 입력 > 인증번호 입력",
+	"화면ID": "SID_FO_CU_038",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/customer/member/mobile-identity-verification-step2"
+},
+{
+	"구분": "고객",
+	"화면명": "NS 기본 로그인",
+	"화면ID": "SID_FO_CU_101",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login"
+},
+{
+	"구분": "고객",
+	"화면명": "아이디 찾기(휴대폰 인증으로 찾기)",
+	"화면ID": "SID_FO_CU_104",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/find-id"
+},
+{
+	"구분": "고객",
+	"화면명": "아이디 찾기(이메일 인증으로 찾기)",
+	"화면ID": "SID_FO_CU_105",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/find-id"
+},
+{
+	"구분": "고객",
+	"화면명": "아이디찾기 완료",
+	"화면ID": "SID_FO_CU_106",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/find-id-complete"
+},
+{
+	"구분": "고객",
+	"화면명": "비밀번호 찾기",
+	"화면ID": "SID_FO_CU_107",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/find-password-id"
+},
+{
+	"구분": "고객",
+	"화면명": "비밀번호 찾기(휴대폰 인증으로 찾기)",
+	"화면ID": "SID_FO_CU_108",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/find-password"
+},
+{
+	"구분": "고객",
+	"화면명": "비밀번호 찾기(이메일 인증으로 찾기)",
+	"화면ID": "SID_FO_CU_109",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/find-password"
+},
+{
+	"구분": "고객",
+	"화면명": "비밀번호 변경",
+	"화면ID": "SID_FO_CU_110",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/password-change"
+},
+{
+	"구분": "고객",
+	"화면명": "비밀번호 변경(90일)",
+	"화면ID": "SID_FO_CU_111",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/password-change?regularChange=false"
+},
+{
+	"구분": "고객",
+	"화면명": "네이버 로그인",
+	"화면ID": "SID_FO_CU_112",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login"
+},
+{
+	"구분": "고객",
+	"화면명": "카카오 로그인",
+	"화면ID": "SID_FO_CU_113",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login"
+},
+{
+	"구분": "고객",
+	"화면명": "페이코 로그인",
+	"화면ID": "SID_FO_CU_114",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login"
+},
+{
+	"구분": "고객",
+	"화면명": "네이버 아이디 연결",
+	"화면ID": "SID_FO_CU_118",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/simple-connect"
+},
+{
+	"구분": "고객",
+	"화면명": "페이코 아이디 연결",
+	"화면ID": "SID_FO_CU_120",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/simple-connect"
+},
+{
+	"구분": "고객",
+	"화면명": "애플 아이디 연결",
+	"화면ID": "SID_FO_CU_121",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/simple-connect"
+},
+{
+	"구분": "고객",
+	"화면명": "성인인증 로그인",
+	"화면ID": "SID_FO_CU_125",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login"
+},
+{
+	"구분": "고객",
+	"화면명": "휴면 아이디 안내",
+	"화면ID": "SID_FO_CU_127",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/dormant-account"
+},
+{
+	"구분": "고객",
+	"화면명": "휴면 해제 완료",
+	"화면ID": "SID_FO_CU_128",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/dormant-certify"
+},
+{
+	"구분": "고객",
+	"화면명": "비회원주문조회",
+	"화면ID": "SID_FO_CU_129",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/customer/login/none-member"
+},
+{
+	"구분": "상품",
+	"화면명": "상품상세",
+	"화면ID": "SID_FO_PD_002<br>SID_FO_PD_004<br>SID_FO_PD_043<br>SID_FO_PD_051<br>SID_FO_PD_006<br>SID_FO_PD_044<br>SID_FO_PD_007<br>SID_FO_PD_008<br>SID_FO_PD_033<br>SID_FO_PD_034<br>SID_FO_PD_035<br>SID_FO_PD_012<br>SID_FO_PD_014<br>SID_FO_PD_036<br>SID_FO_PD_045<br>SID_FO_PD_047<br>SID_FO_PD_020<br>SID_FO_PD_023<br>SID_FO_PD_024<br>SID_FO_PD_027<br>SID_FO_PD_040",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/goods/detail/"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)상세이미지",
+	"화면ID": "SID_FO_PD_003",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)공유하기",
+	"화면ID": "SID_FO_PD_005",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)쿠폰다운로드",
+	"화면ID": "SID_FO_PD_032",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)NSmall 씽씽배송 지역 안내",
+	"화면ID": "SID_FO_PD_009",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "묶음배송 가능 상품",
+	"화면ID": "SID_FO_PD_010",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/goods/bundle-delivery"
+},
+{
+	"구분": "상품",
+	"화면명": "검색결과 없음",
+	"화면ID": "SID_FO_PD_041",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/goods/bundle-delivery"
+},
+{
+	"구분": "상품",
+	"화면명": "검색결과 있음",
+	"화면ID": "SID_FO_PD_046",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/goods/bundle-delivery?bundleList=true"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)헤드카피배너 전체보기",
+	"화면ID": "SID_FO_PD_011",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)사은품 전체보기",
+	"화면ID": "SID_FO_PD_052",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "상품평 상세_(P)상세이미지",
+	"화면ID": "SID_FO_PD_037",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)신고하기",
+	"화면ID": "SID_FO_PD_048",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)상품문의하기",
+	"화면ID": "SID_FO_PD_049",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P)배송/교환/반품안내",
+	"화면ID": "SID_FO_PD_022",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "장바구니 담기",
+	"화면ID": "SID_FO_PD_028",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P) 방송 알림",
+	"화면ID": "SID_FO_PD_031",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "상품",
+	"화면명": "(P) 재입고 알림",
+	"화면ID": "SID_FO_PD_038",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "주문/결제",
+	"화면명": "상품 없음_회원",
+	"화면ID": "SID_FO_OD_036",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/order/cart?empty=1"
+},
+{
+	"구분": "주문/결제",
+	"화면명": "장바구니_상품있음_일반상품만",
+	"화면ID": "SID_FO_OD_037",
+	"상태": "퍼블완료",
+	"PATH": "/publishing/order/cart"
+},
+{
+	"구분": "주문/결제",
+	"화면명": "장바구니_상품있음_모든상품",
+	"화면ID": "SID_FO_OD_038",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/order/cart"
+},
+{
+	"구분": "주문/결제",
+	"화면명": "(P)옵션변경",
+	"화면ID": "SID_FO_OD_039",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "주문/결제",
+	"화면명": "(P)옵션변경_사은품있음",
+	"화면ID": "SID_FO_OD_041",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/guide/layer"
+},
+{
+	"구분": "공통",
+	"화면명": "앱다운로드",
+	"화면ID": "SID_FO_CM_010",
+	"상태": "최종검수완료",
+	"PATH": "/publishing/common/"
+}
+]

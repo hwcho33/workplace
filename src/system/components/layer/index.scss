@@ -1,0 +1,329 @@
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+@mixin transition-center {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity .7s ease(out-expo);
+
+    .layer-overlay {
+      transition: opacity .5s ease(out-expo);
+    }
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+
+    .layer-container {
+      transform: translateY(0);
+    }
+
+    .layer-overlay {
+      opacity: 0;
+    }
+  }
+
+  &-enter-to,
+  &-leave-from {
+    opacity: 1;
+
+    .layer-container {
+      transform: translateY(0);
+    }
+
+    .layer-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin transition-bottom {
+  &-enter-active,
+  &-leave-active {
+    .layer-container {
+      transition: transform .7s ease(inout-expo);
+    }
+
+    .layer-overlay {
+      transition: opacity .7s ease(out-expo);
+    }
+  }
+
+  &-enter-from,
+  &-leave-to {
+    .layer-container {
+      transform: translateY(120%);
+    }
+
+    .layer-overlay {
+      opacity: 0;
+    }
+  }
+
+  &-enter-to,
+  &-leave-from {
+    .layer-container {
+      transform: translateY(0);
+    }
+
+    .layer-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin fix-bottom {
+  .layer-bottom {
+    background-color: var(--white);
+    bottom: 0;
+    box-shadow: 0 rem(-1) rem(2) rgba(0, 0, 0, .04);
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    .bottom-inner:deep() {
+      padding: rem(16) rem(16) rem(20);
+
+      > div {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+
+    @include safe-area;
+  }
+
+  &.fixed-bottom {
+    .layer-scroll {
+      margin-bottom: rem(88);
+    }
+  }
+}
+
+@mixin fix-bottom-desktop {
+  .layer-bottom:deep() {
+    padding: rem(16);
+
+    .bottom-inner {
+      padding: 0;
+    }
+  }
+
+  &.fixed-bottom {
+    .layer-scroll {
+      margin-bottom: rem(84);
+    }
+  }
+}
+
+.layer-wrap {
+  background-color: transparent;
+  border: 0;
+  border-radius: rem(12);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  max-width: rem(375);
+  overflow-y: hidden;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  .layer-overlay {
+    background-color: rgba(0, 0, 0, .6);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  .layer-close-bt {
+    background: url(/images/icons/common/icon-full-layer-close.svg) no-repeat center center;
+    background-size: rem(24);
+    border: 0;
+    cursor: pointer;
+    height: rem(48);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem(48);
+    z-index: 1;
+
+    @include hide-txt;
+  }
+
+  .layer-container {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    min-width: rem(28);
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    @include safe-area;
+  }
+
+  .layer-scroll {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .layer-header {
+    background-color: var(--white);
+    display: block;
+    font-size: rem(18);
+    font-weight: 700;
+    height: rem(48);
+    line-height: 1;
+    padding: rem(16) rem(40);
+    text-align: center;
+    width: 100%;
+
+    @include eline-clamp;
+  }
+
+  .layer-contents {
+    font-size: rem(14);
+    line-height: 1.5;
+    padding: rem(16);
+  }
+
+  // mo center transition
+  &.center-layer {
+    @include transition-center;
+  }
+
+  // mo full,bottom transition
+  &.full-layer,
+  &.bottom-layer {
+    @include transition-bottom;
+  }
+
+  // mobile center layer use
+  &.center {
+    display: flex;
+
+    .layer-container {
+      border-radius: rem(12);
+      height: auto;
+      margin: auto rem(20);
+      position: relative;
+    }
+
+    .layer-scroll {
+      max-height: calc(100vh - rem(196));
+    }
+
+    .layer-bottom {
+      padding: rem(16);
+    }
+  }
+
+  // mobile full layer use
+  &.full {
+    border-radius: 0;
+    margin: 0;
+    max-width: 100%;
+    overflow-y: auto;
+    width: 100%;
+
+    .layer-container {
+      height: 100%;
+      position: fixed;
+    }
+
+    @include fix-bottom;
+  }
+
+  // mobile bottom layer use
+  &.bottom {
+    border-radius: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+
+    .layer-container {
+      border-radius: rem(20) rem(20) 0 0;
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+    }
+
+    .layer-scroll {
+      max-height: calc(100vh - rem(250));
+    }
+
+    @include fix-bottom;
+  }
+
+  // desktop use
+	#desktop & {
+    border-radius: rem(12);
+    display: flex;
+    margin: auto;
+    overflow-y: hidden;
+
+    .layer-close-bt {
+      height: rem(52);
+      width: rem(52);
+    }
+
+    .layer-container {
+      border-radius: rem(12);
+      height: auto;
+      margin: auto;
+      max-width: rem(375);
+      position: relative;
+      width: 100%;
+    }
+
+    .layer-header {
+      font-size: 1.6rem;
+      height: rem(52);
+      padding-bottom: 1.8rem;
+      padding-top: 1.8rem;
+    }
+
+    .layer-scroll {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      max-height: calc(100vh - rem(196));
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-top: 0;
+    }
+
+    // pc full layer use
+    &.full {
+      @include fix-bottom-desktop;
+    }
+
+    // pc bottom layer use
+    &.bottom {
+      @include fix-bottom-desktop;
+    }
+
+    // pc center, full, bottom transition
+    &.center-layer,
+    &.full-layer,
+    &.bottom-layer {
+      @include transition-center;
+    }
+  }
+}

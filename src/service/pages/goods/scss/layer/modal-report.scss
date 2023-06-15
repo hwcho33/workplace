@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+.report-wrap {
+  padding-bottom: rem(64);
+
+  .report-info {
+    align-items: center;
+    background-color: var(--gray-50);
+    border-radius: rem(12);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(16);
+    padding: rem(20);
+
+    &::before {
+      background: url("/images/icons/goods/icon-info-report.svg") no-repeat center/rem(32) rem(28);
+      content: "";
+      display: inline-block;
+      height: rem(28);
+      width: rem(32);
+    }
+
+    .info-text {
+      color: var(--gray-600);
+      flex: 1;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-left: rem(16);
+    }
+  }
+
+  .report {
+    dl {
+      & > dt {
+        font-size: rem(16);
+        font-weight: 700;
+        margin-top: rem(32);
+
+        & + dd {
+          margin-top: rem(16);
+        }
+      }
+
+      & > dd {
+        .report-check {
+          .report-check-list {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+
+            li {
+              @include input-radio;
+
+              margin-top: rem(16);
+
+              label {
+                color: var(--gray-900);
+              }
+
+              &:first-child {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+
+        .textarea {
+          align-items: flex-end;
+          border: rem(1) solid var(--gray-300);
+          border-radius: rem(12);
+          display: flex;
+          flex-direction: column;
+          height: rem(200);
+          padding: rem(16) rem(20);
+
+          textarea {
+            border: 0;
+            flex: 1;
+            font-size: rem(16);
+            line-height: 1.5;
+            margin-bottom: rem(6);
+            outline: 0;
+            padding: 0;
+            resize: none;
+            width: 100%;
+
+            &::placeholder {
+              color: var(--gray-500);
+            }
+          }
+
+          .util {
+            color: var(--gray-500);
+            line-height: 1;
+
+            em {
+              &.count {
+                color: var(--gray-800);
+              }
+            }
+          }
+        }
+
+        .report-btn {
+          margin-top: rem(16);
+
+          @include bg-btn-type($color: var(--white), $bg-color: var(--gray-900), $height: rem(52));
+        }
+
+        .report-bullet-list {
+          @include bullet-list;
+
+          margin-top: rem(20);
+        }
+      }
+    }
+  }
+}

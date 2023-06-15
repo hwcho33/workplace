@@ -1,0 +1,122 @@
+@use "../src/sample/scss/mixins.scss";
+
+.menu-item {
+  --menu-item-height: 54px;
+
+  background-color: hsl(0deg 0% 0% / 0);
+  position: relative;
+  transition: background-color 200ms ease-out;
+  user-select: none;
+
+  @include mixins.mouse-event(hover) {
+    background-color: hsl(0deg 0% 0% / .15);
+  }
+
+  &__head {
+    aspect-ratio: 1 / 1;
+    display: block;
+    height: var(--menu-item-height);
+    position: relative;
+  }
+
+  &__label {
+    color: hsl(0deg 0% 100%);
+    padding: 0;
+
+    &.disabled {
+      cursor: default;
+    }
+
+    svg {
+      aspect-ratio: 1 / 1;
+      background: none;
+      border: none;
+      border-radius: 0;
+      display: block;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0;
+
+      --icon-margin: 0 auto;
+      --icon-display: block;
+      --icon-size: 22px;
+      --icon-stroke: 1.5;
+      --icon-color: hsl(0deg 0% 100%);
+
+      &[data-src="x"] {
+        --icon-size: 24px;
+      }
+    }
+
+    em {
+      display: none;
+    }
+  }
+
+  .menu-item__context {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  @include mixins.responsive(md) {
+    --menu-item-height: 44px;
+
+    &__head {
+      aspect-ratio: unset;
+    }
+
+    &__label {
+      align-items: center;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      height: 100%;
+      min-width: 0;
+      padding: 0 42px 0 0;
+      text-decoration: none;
+
+      svg {
+        height: 100%;
+        margin-left: 18px;
+        margin-right: 10px;
+        pointer-events: none;
+
+        --icon-size: 18px;
+      }
+
+      em {
+        display: block;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: -.5px;
+
+        @include mixins.text-single-line();
+      }
+    }
+
+    .layout-side--fold & {
+      --menu-item-height: 54px;
+
+      &__head {
+        aspect-ratio: 1 / 1;
+        display: block;
+      }
+
+      &__label {
+        display: block;
+        padding: 0;
+
+        svg {
+          margin: 0 auto;
+
+          --icon-size: 22px;
+        }
+
+        em {
+          display: none;
+        }
+      }
+    }
+  }
+}

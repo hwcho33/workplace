@@ -1,0 +1,84 @@
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+.layer-wrap {
+  &.appview-modal {
+    &.center {
+      width: rem(280);
+    }
+
+    .layer-container {
+      background: transparent;
+      box-shadow: inherit;
+      width: auto;
+    }
+
+    .layer-contents {
+      padding: 0;
+    }
+
+    .modal-wrap {
+      background-color: #fff;
+      border-radius: rem(20);
+      padding-bottom: rem(20);
+    }
+
+    .bnnr-wrap {
+      width: 100%;
+
+      .img {
+        display: block;
+        margin: 0 auto rem(18);
+        max-height: rem(120);
+        padding-top: rem(20);
+
+        & + .bnnr-name {
+          padding: 0 rem(20);
+          text-align: center;
+
+          dt {
+            @include eline-clamp($lines: 1);
+
+            font-size: rem(24);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: rem(8);
+          }
+
+          dd {
+            @include eline-clamp($lines: 2);
+
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      .img-full {
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    .btn-wrap {
+      margin: rem(20) rem(20) 0;
+
+      .app-btn {
+        @include bg-btn-type($height: rem(44), $font: rem(14), $color: var(--white), $bg-color: var(--gray-900));
+      }
+    }
+
+    .close-btn {
+      @include button;
+
+      background: transparent;
+      color: #fff;
+      font-size: rem(14);
+      font-weight: 400;
+      margin-top: rem(24);
+      padding: 0 0 rem(2);
+      text-decoration: underline;
+    }
+  }
+}

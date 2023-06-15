@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+.layer-wrap {
+  &.ad-push-popup {
+    .layer-header {
+      height: auto;
+      padding: rem(40) rem(32) 0;
+
+      .ad-title {
+        font-size: rem(22);
+        font-weight: 700;
+        height: auto;
+        padding: rem(40) rem(32) 0;
+      }
+
+      .sub-title {
+        font-size: rem(14);
+        font-weight: 400;
+        margin-top: rem(8);
+      }
+    }
+
+    .layer-contents {
+      padding: 0 rem(32) rem(20);
+      text-align: center;
+
+      .img-wrap {
+        * ~ & {
+          margin-top: rem(20);
+        }
+      }
+
+      .btn-wrap {
+        display: flex;
+        flex-direction: column;
+
+        * ~ & {
+          margin-top: rem(20);
+        }
+      }
+    }
+  }
+
+  .receive-btn {
+    @include bg-btn-type($height: rem(44), $font: rem(14), $color: var(--white), $bg-color: var(--gray-900));
+
+    letter-spacing: -0.01em;
+  }
+
+  .no-receive-btn {
+    @include border-btn-type($height: rem(44), $font: rem(14), $color: var(--gray-900), $border-color: var(--gray-900));
+
+    border: none;
+    font-weight: 400;
+
+    * ~ & {
+      margin-top: rem(12);
+    }
+  }
+}

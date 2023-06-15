@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" as="style" crossorigin href="/fonts/pretendard/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NS COMMON FRONT OFFICE</title>
+    <script>
+      ((global) => {
+        const condition = global.navigator.userAgent.match(/ipad|iphone|Android|_NS_iOS|_NS_ANDROID/i) === null;
+        if (condition) { global.document.addEventListener('DOMContentLoaded', () => { global.document.body.id = 'desktop' }); }
+      })(window);
+    </script>
+    <script type="module" crossorigin src="/assets/index-e42e774a.js"></script>
+    <link rel="stylesheet" href="/assets/index-734d1100.css">
+  </head>
+  <body id="mobile">
+    <div id="app"></div>
+    
+  </body>
+</html>

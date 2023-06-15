@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+.layer-wrap {
+  &.modal-dawn-delivery-wrap {
+    .dawn-info-wrap {
+      background: linear-gradient(180deg, #003173 -20.78%, #2055bd 24.53%, #5e9fda 79.22%), linear-gradient(180deg, #1654b0 0%, #4479c8 40.63%, #ddadad 100%), #222646;
+      line-height: 1;
+      margin: rem(-16) rem(-16) 0;
+      text-align: center;
+
+      .title-wrap {
+        background: url("/images/icons/goods/bg-dawn.png") no-repeat 50% 0;
+        background-size: rem(375);
+        padding-bottom: rem(53);
+        padding-top: rem(56);
+
+        span { display: inline-block;}
+
+        .title {
+          color: var(--white);
+          font-size: rem(28);
+          font-weight: 700;
+          + .sub-text { margin-top: rem(12);}
+        }
+
+        .sub-title {
+          color: #ffe987;
+          font-size: rem(15);
+          font-weight: 500;
+          letter-spacing: rem(-.2);
+          + .title { margin-top: rem(22);}
+        }
+
+        .sub-text {
+          color: #002092;
+          font-size: rem(20);
+          font-weight: 600;
+          letter-spacing: rem(-.2);
+        }
+      }
+
+      .time-text {
+        background-color: var(--gray-900);
+        color: var(--white);
+        font-size: rem(17);
+        font-weight: 500;
+        padding-bottom: rem(10);
+        padding-top: rem(9);
+      }
+    }
+
+    .dawn-detail-wrap {
+      padding-top: rem(32);
+
+      .title-wrap {
+        padding: rem(10) rem(4) rem(2);
+
+        .title {
+          font-size: rem(16);
+          font-weight: 500;
+          line-height: 1;
+
+          .label-sing {
+            background: rgba(42, 129, 253, 0.1);
+            border-radius: rem(30);
+            color: var(--ns-info);
+            display: inline-block;
+            font-size: rem(12);
+            font-weight: 700;
+            height: rem(20);
+            line-height: rem(20);
+            margin-left: rem(8);
+            padding-left: rem(3);
+            padding-right: rem(6);
+
+            i {
+              background: url("/images/icons/goods/icon-sing.svg") no-repeat 0 50%;
+              background-size: rem(14);
+              padding-left: rem(18);
+            }
+          }
+          + .sub-text { margin-top: rem(14);}
+        }
+      }
+    }
+
+    .dawn-detail-list {
+      color: var(--gray-900);
+      line-height: 1;
+      text-align: center;
+
+      li {
+        margin-top: rem(32);
+
+        &.icon-dawn {
+          .sub-title {
+            background: url("/images/icons/goods/icon-dawn02.svg") no-repeat 50% 0;
+            background-size: rem(75) rem(62.5);
+            padding-top: rem(80);
+          }
+        }
+
+        &.icon-delivery {
+          .sub-title {
+            background: url("/images/icons/goods/icon-sing-box.svg") no-repeat 50% 0;
+            background-size: rem(120) rem(54);
+            padding-top: rem(72);
+          }
+        }
+      }
+
+      .title {
+        display: block;
+        font-size: rem(20);
+        font-weight: 700;
+        position: relative;
+      }
+
+      .sub-title {
+        font-size: rem(16);
+        font-weight: 500;
+        margin-top: rem(8);
+      }
+
+      .sub-text {
+        margin-top: rem(8);
+      }
+
+      .etc-text {
+        color: var(--gray-500);
+        font-size: rem(12);
+        margin-top: rem(8);
+      }
+    }
+
+    .dawn-detail-notice-wrap {
+      border-top: rem(1) solid var(--gray-200);
+      margin-top: rem(40);
+      padding-top: rem(16);
+
+      .title {
+        font-size: rem(16);
+        font-weight: 700;
+        padding-left: rem(4);
+      }
+
+      .dawn-detail-notice-list {
+        li {
+          align-items: center;
+          display: flex;
+          height: rem(80);
+          margin-top: rem(16);
+          padding-left: rem(96);
+          position: relative;
+
+          &::before {
+            background-color: var(--gray-100);
+            border-radius: rem(12);
+            content: "";
+            height: rem(80);
+            left: 0;
+            position: absolute;
+            width: rem(80);
+          }
+
+          &.icon-notice01 {
+            &::before {
+              background: url("/images/icons/goods/icon-dawn-notice01.svg") no-repeat 50% 0;
+              background-size: rem(80);
+            }
+          }
+
+          &.icon-notice02 {
+            &::before {
+              background: url("/images/icons/goods/icon-dawn-notice02.svg") no-repeat 50% 0;
+              background-size: rem(80);
+            }
+          }
+
+          &.icon-notice03 {
+            &::before {
+              background: url("/images/icons/goods/icon-dawn-notice03.svg") no-repeat 50% 0;
+              background-size: rem(80);
+            }
+          }
+
+          p {
+            color: var(--gray-700);
+            font-size: rem(13);
+            line-height: 150%;
+
+            span {
+              color: var(--gray-900);
+            }
+          }
+        }
+      }
+    }
+
+    .msg-warning {
+      @include input-msg;
+
+      border-top: rem(1) solid var(--gray-200);
+      margin-top: rem(20);
+      padding-top: rem(16);
+    }
+  }
+}

@@ -1,0 +1,155 @@
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.goods-detail-img:deep() {
+  position: relative;
+
+  .img-info {
+    position: relative;
+
+    .img-swiper {
+      position: relative;
+      text-align: center;
+
+      .item {
+        border: 0;
+        height: 100%;
+        padding: 0;
+        vertical-align: top;
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+
+        &.is-video {
+          position: relative;
+
+          &::after {
+            background-color: rgba(0, 0, 0, .2);
+            bottom: 0;
+            content: "";
+            display: block;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+          }
+
+          img {
+            position: relative;
+          }
+
+          .btn-play {
+            background: url("/images/icons/common/btn-video-play.svg") 0 0 no-repeat;
+            background-size: rem(64);
+            border: 0;
+            height: rem(64);
+            left: 50%;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: rem(64);
+            z-index: 2;
+
+            @include hide-txt;
+          }
+        }
+      }
+
+      .pagination {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: rem(12);
+        bottom: rem(20);
+        color: var(--white);
+        font-size: rem(12);
+        height: rem(20);
+        left: 50%;
+        line-height: rem(20);
+        padding-left: rem(12);
+        padding-right: rem(12);
+        position: absolute;
+        transform: translateX(-50%);
+        width: auto;
+        z-index: 1;
+
+        .swiper-pagination-current {
+          font-weight: 500;
+          margin-right: rem(4);
+        }
+
+        .swiper-pagination-total {
+          margin-left: rem(4);
+        }
+      }
+    }
+  }
+
+  // desktop
+  #desktop & {
+    position: sticky;
+    top: rem(90);
+    width: rem(710);
+
+    .img-info {
+      margin-left: rem(98);
+
+      .img-swiper {
+        border-radius: rem(20);
+        overflow: hidden;
+      }
+    }
+
+    .detail-add-swiper {
+      display: flex;
+      position: absolute;
+      top: 0;
+
+      .swiper {
+        .swiper-wrapper {
+          display: block;
+        }
+
+        .swiper-slide {
+          border-radius: rem(12);
+          height: rem(80);
+          overflow: hidden;
+          width: rem(80) !important;
+
+          > button {
+            border: none;
+            display: block;
+            padding: 0;
+          }
+
+          + .swiper-slide {
+            margin-top: rem(8);
+          }
+
+          &.swiper-slide-thumb-active {
+            > button::after {
+              border-color: var(--gray-900);
+              border-radius: rem(12);
+              border-style: solid;
+              border-width: rem(2);
+              bottom: 0;
+              content: "";
+              left: 0;
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .broadcast-info {
+      border-radius: 0 0 rem(20) rem(20);
+      height: rem(44);
+      padding-bottom: 0;
+    }
+  }
+}

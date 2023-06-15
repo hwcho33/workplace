@@ -1,0 +1,220 @@
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.pub-guide-wrap:deep() {
+  padding-top: 30px;
+
+  // utils
+  .utils-rem {
+    font-size: rem(17);
+  }
+
+  .utils-vw {
+    font-size: vw(20);
+  }
+
+  .utils-ease {
+    transition: opacity 0.32s ease(out-expo);
+    transition: opacity 0.32s ease(in-sine);
+  }
+
+  .mixins-hide-txt {
+    @include hide-txt;
+  }
+
+  .mixins-word-wrap {
+    @include word-wrap;
+  }
+
+  .mixins-blind {
+    @include blind;
+  }
+
+  .mixins-eline-clamp {
+    @include eline-clamp;
+  }
+
+  .mixins-eline-clamp2 {
+    @include eline-clamp(2);
+  }
+
+  .mixins-clear {
+    @include clear;
+  }
+
+  .mixins-inline-scrolling {
+    @include inline-scrolling;
+  }
+
+  .mixins-inline-scrolling p {
+    display: inline-flex;
+    width: 100px;
+  }
+
+  .mixins-media {
+    @include media(tablet) {
+      font-size: 17px;
+    }
+
+    @include media(desktop) {
+      font-size: 20px;
+    }
+  }
+
+  // button
+  .ex-btn-01 {
+    @include border-btn-type;
+  }
+
+  .ex-btn-02 {
+    @include border-btn-type($color: var(--gray-900), $border-color: var(--gray-900));
+  }
+
+  .ex-btn-03 {
+    @include border-btn-type($height: rem(44), $font: rem(14));
+  }
+
+  .ex-btn-04 {
+    @include border-btn-type($height: rem(44), $font: rem(14), $color: var(--gray-900), $border-color: var(--gray-900));
+  }
+
+  .ex-btn-05 {
+    @include bg-btn-type;
+  }
+
+  .ex-btn-06 {
+    @include bg-btn-type($color: var(--white), $bg-color: var(--gray-900));
+  }
+
+  .ex-btn-07 {
+    @include bg-btn-type($height: rem(44), $font: rem(14));
+  }
+
+  .ex-btn-08 {
+    @include bg-btn-type($height: rem(44), $font: rem(14), $color: var(--white), $bg-color: var(--gray-900));
+  }
+
+  .ex-button-wrapper {
+    display: flex;
+  }
+
+  .ex-button-wrapper-type1 {
+    @include button-wrapper;
+  }
+
+  .ex-button-wrapper-type2 {
+    @include button-wrapper(rem(10));
+  }
+
+  .ex-button-wrapper-type3 {
+    @include button-wrapper(rem(3));
+  }
+
+  // form
+  .ex-input-text-wrap {
+    @include input-text;
+  }
+
+  .ex-input-password-wrap {
+    @include input-text(password);
+  }
+
+  .ex-input-msg {
+    @include input-msg;
+  }
+
+  .ex-custom-check {
+    @include input-checkbox;
+  }
+
+  .ex-custom-radio {
+    @include input-radio;
+  }
+
+  .ex-head-label {
+    @include input-head-label;
+  }
+
+  .ex-toggle {
+    @include input-toggle;
+  }
+
+  .ex-toggle-big {
+    @include input-toggle(big);
+  }
+
+  // tab
+  .ex-tab-wrap {
+    &.ex-size2 {
+      @include tab(2);
+    }
+
+    &.ex-size3 {
+      @include tab(3);
+    }
+
+    &.ex-size4 {
+      @include tab(4);
+    }
+
+    &.ex-size5 {
+      @include tab(5);
+    }
+
+    &.ex-size6 {
+      @include tab(6);
+    }
+
+    &.ex-size7 {
+      @include tab(7);
+    }
+  }
+
+  // bullet-list
+  .ex-bullet-list {
+    @include bullet-list;
+  }
+
+  // swiper
+  @mixin ex-swiper {
+    border: rem(1) solid var(--gray-900);
+    margin: 0;
+    max-width: rem(470);
+
+    .swiper-slide {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      font-size: rem(18);
+      height: rem(100);
+      justify-content: center;
+
+      &:nth-child(odd) {
+        background-color: #faebd7;
+      }
+
+      &:nth-child(even) {
+        background-color: #f6f6f6;
+      }
+    }
+  }
+
+  .ex-swiper {
+    .swiper {
+      @include ex-swiper;
+
+      span {
+        display: block;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      background-color: var(--ns-red);
+    }
+  }
+
+  // label
+  .ex-label-wrap {
+    @include label-list;
+  }
+}

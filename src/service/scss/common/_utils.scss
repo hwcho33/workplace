@@ -1,0 +1,174 @@
+@use "sass:math";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-disable annotation-no-unknown */
+$base-rem-size: 10px;
+$base-vw-size: 1000;
+$base-percent-size: 100;
+$base-decimal-size: 100;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1264px;
+$easings: (
+  in-sine: cubic-bezier(0.47, 0, 0.745, 0.715),
+  out-sine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  inout-sine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53),
+  out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  inout-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  inout-cubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22),
+  out-quart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  inout-quart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+  out-quint: cubic-bezier(0.23, 1, 0.32, 1),
+  inout-quint: cubic-bezier(0.23, 1, 0.32, 1),
+  in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+  out-expo: cubic-bezier(0.19, 1, 0.22, 1),
+  inout-expo: cubic-bezier(0.19, 1, 0.22, 1),
+  in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335),
+  out-circ: cubic-bezier(0.075, 0.82, 0.165, 1),
+  inout-circ: cubic-bezier(0.075, 0.82, 0.165, 1),
+  in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  inout-back: cubic-bezier(0.68, -0.55, 0.265, 1.55),
+) !default;
+
+// 플로팅 clear
+@mixin clear {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+// 인라인 가로스크롤
+@mixin inline-scrolling {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: visible;
+  overflow-y: hidden;
+  padding-bottom: .2rem;
+  white-space: nowrap;
+  width: 100%;
+}
+
+// 폰트 삭제 믹스인
+@mixin hide-txt {
+  font-size: 0;
+  line-height: 0;
+}
+
+// Word Wrapping 믹스인
+@mixin word-wrap {
+  hyphens: auto;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+// blind 믹스인
+@mixin blind {
+  clip: rect(0 0 0 0);
+  color: transparent;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  text-indent: -999.9rem;
+  width: 0;
+  z-index: -1;
+}
+
+// 텍스트 생략(Ellipsis) 믹스인
+@mixin eline-clamp($lines: 1) {
+  @if ($lines == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// safe-area
+@mixin safe-area-bottom($px: 0) {
+  @if ($px == 0) {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  @else {
+    padding-bottom: calc(constant(safe-area-inset-bottom) + #{$px}px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + #{$px}px);
+  }
+}
+
+// 미디어 쿼리
+@mixin media($breakpoint) {
+  @if ($breakpoint == tablet) {
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == fold) {
+    @media (max-width: 280px) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == desktop) {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+
+  @else {
+    @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+  }
+}
+
+// 단위 제거 유틸리티 함수
+@function remove-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+// 단위가 없는 숫자 값 → px 값 반환 유틸리티 함수
+@function unitless-px($value) {
+  @return if(unitless($value), if($value != 0, $value * 1px, $value), $value);
+}
+
+// 소수점 제한 유틸리티 함수
+@function decimal-limit($value, $base: $base-decimal-size) {
+  @return math.div(math.floor($value * $base), $base);
+}
+
+// px 값 → rem 값 변경 유틸리티 함수
+@function rem($px, $base: $base-rem-size) {
+  @return (remove-unit(math.div($px, $base))) * 1rem;
+}
+
+// px 값 → vw 값 변경 유틸리티 함수
+@function vw($px, $base: $base-vw-size) {
+  @return (remove-unit(math.div($px, $base))) * 100vw;
+}
+
+// 물리 움직임을 표현하는 이징 함수 반환 유틸리티 함수
+@function ease($keyword) {
+  @if map-has-key($easings, $keyword) {
+    @return map-get($easings, $keyword);
+  }
+
+  @else {
+    @error "ease() 함수에 전달 가능한 값은 다음 중 하나입니다 → #{map-keys($easings)}";
+  }
+}

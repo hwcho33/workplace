@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "types": [
+      "node",
+      "vite/client",
+      "jest"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "./node_modules/vue/"
+    ],
+    "useDefineForClassFields": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "noLib": false,
+    "jsx": "preserve",
+    "sourceMap": false,
+    "isolatedModules": true,
+    "lib": ["esnext", "dom"],
+    //"noImplicitAny": false,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
+    "allowJs": true,
+    "paths": {
+      "@/*": [ "src/system/*" ],
+      "~/*": [ "src/service/*" ],
+      "#/*": [ "src/sample/*" ],
+      "&/*": [ "src/publishing/*" ]
+    }
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/types/**/*.d.ts",
+    "src/types/**/*.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+}

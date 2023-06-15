@@ -1,0 +1,115 @@
+<template>
+  <div class="nsmall-terms-wrap youth-policy">
+    <h2 class="page-title" v-if="getOSByUserAgent() === 'desktop'">청소년 보호정책</h2>
+
+    <div class="terms-content">
+      <p>
+        (주)엔에스쇼핑은 각종 유해정보 등으로부터 청소년(만 19세 미만)을 보호하고 신뢰서비스를 제공하기 위하여 "청소년
+        보호법" 및 "정보통신망 이용촉진 및 정보보호 등에 관한 법률" 등에 근거하여 다음과 같이 청소년 보호정책을
+        시행합니다.
+      </p>
+      <dl>
+        <dt>1. 청소년 보호의 기본원칙</dt>
+        <dd>
+          청소년의 유해정보 접근 가능성 및 거래를 사전 차단하는 등 일련의 청소년 보호조치 준수를 통해 청소년을
+          보호함으로써 기업의 사회적 책임을 다함에 있습니다.
+        </dd>
+        <dt>2. 청소년 보호장치</dt>
+        <dd>
+          (주)엔에스쇼핑 성인인증 장치운영 및 청소년 유해매체물의 표시를 적용하여 청소년에 대한 유해정보의 접근가능성 및
+          노출을 사전에 예방하고 있으며 청소년 유해상품(유해매체물, 유해약물, 유해물건등)의 구매도 엄격히 금지하고
+          있습니다.
+        </dd>
+        <dt>3. 유해정보로 인한 피해상담 및 고충처리</dt>
+        <dd>
+          <em>[청소년 보호 담당부서]</em>
+          <div class="table">
+            <table>
+              <caption>
+                <span class="blind">청소년 보호 담당부서</span>
+              </caption>
+              <colgroup>
+                <col style="width: 30%" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">부서</th>
+                  <td>CS운영팀</td>
+                </tr>
+                <tr>
+                  <th scope="row">이메일</th>
+                  <td>secure@nsmall.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">전화번호</th>
+                  <td>1688-7700</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </dd>
+        <dt>4. 유해정보로부터 청소년을 보호하기 위한 교육</dt>
+        <dd>
+          (주)엔에스쇼핑 청소년보호와 관련한 업무 담당자를 대상으로 청소년 보호 관련 법령과 유해정보 발견시 처리방법,
+          위반사항 처리에 대한 보고절차 등을 교육하고 있습니다.
+        </dd>
+        <dt>5. 청소년 보호 책임자 지정</dt>
+        <dd>
+          <em
+            >(주)엔에스쇼핑 아래와 같이 청소년 보호 책임자를 지정하여 청소년 유해정보의 차단 및 관리, 청소년
+            유해정보로부터의 청소년 보호정책을 수립하는 등 청소년 보호업무를 수행하고 있습니다.</em
+          >
+          <div class="table">
+            <table>
+              <caption>
+                <span class="blind">청소년 보호 책임자</span>
+              </caption>
+              <colgroup>
+                <col style="width: 30%" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col">청소년 보호 책임자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">성명</th>
+                  <td>김갑종</td>
+                </tr>
+                <tr>
+                  <th scope="row">부서</th>
+                  <td>고객지원본부</td>
+                </tr>
+                <tr>
+                  <th scope="row">직급</th>
+                  <td>전무</td>
+                </tr>
+                <tr>
+                  <th scope="row">전자우편</th>
+                  <td>secure@nsmall.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">연락처</th>
+                  <td>1688-7700</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </dd>
+      </dl>
+      <p>청소년 보호정책 변경일자: 2022.07.01</p>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { getOSByUserAgent } from '@/utils/device'
+</script>
+
+<style lang="scss">
+@use '~/pages/common/terms/scss/terms.scss';
+</style>

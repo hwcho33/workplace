@@ -1,0 +1,77 @@
+@use "../src/sample/scss/mixins.scss";
+
+.context {
+  left: -5px;
+  opacity: 0;
+  padding: 0 0 0 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 6px;
+  transform: translateX(10px);
+  transition: opacity 180ms ease-out, transform 240ms ease-out;
+
+  @media (hover: hover) {
+    .menu-item:hover & {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+  }
+
+  &__body {
+    --content-background: hsl(0deg 0% 100%);
+    --context-shadow-line: 0 0 0 1px hsl(0deg 0% 0% / .2);
+    --context-shadow-blur: 0 2px 12px hsl(0deg 0% 0% / 0);
+
+    background: var(--content-background);
+    border-radius: 4px;
+    box-shadow: var(--context-shadow-line), var(--context-shadow-blur);
+    filter: drop-shadow(-2px 4px 8px hsl(0deg 0% 0% / .2));
+    max-width: 240px;
+    padding: 0;
+    position: relative;
+    transition-delay: 30ms;
+
+    &::before,
+    &::after {
+      border-bottom: calc(var(--tail-size) * var(--tail-skew)) solid var(--tail-color);
+      border-left: var(--tail-size) solid transparent;
+      border-right: var(--tail-size) solid transparent;
+      content: "";
+      display: block;
+      height: 0;
+      left: -12px;
+      pointer-events: none;
+      position: absolute;
+      top: 15px;
+      transform: rotateZ(var(--tail-angle));
+      width: 0;
+    }
+
+    &::before {
+      --tail-size: 8px;
+      --tail-skew: 1.25;
+      --tail-color: hsl(0deg 0% 0% / .2);
+      --tail-angle: -90deg;
+
+      left: -14px;
+    }
+
+    &::after {
+      --tail-size: 8px;
+      --tail-skew: 1.25;
+      --tail-color: hsl(0deg 0% 100%);
+      --tail-angle: -90deg;
+    }
+  }
+
+  @include mixins.responsive(md) {
+    left: -5px;
+    top: 2px;
+
+    .layout-side--fold & {
+      left: -5px;
+      top: 6px;
+    }
+  }
+}

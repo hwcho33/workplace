@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as n,b as s}from"./index-e42e774a.js";const o={},e={id:"container",class:"container only-header-top"},r=[s("div",{class:"layout-contents-wrap"},"가운데 정렬",-1),s("div",{class:"layout-contents-wrap full-width"},"FULL WIDTH",-1)];const c=t(o,[["render",function(t,s){return a(),n("div",e,r)}]]);export{c as default};

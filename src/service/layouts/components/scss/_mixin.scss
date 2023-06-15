@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@use "~/scss/common/utils" as *;
+
+$mobile-header-main-height: rem(48);
+$mobile-header-menu-height: rem(48);
+$pc-header-main-height: rem(115);
+$pc-header-menu-height: rem(62);
+$pc-footer-menu-height: rem(61);
+$pc-footer-main-height: rem(319);
+$pc-base-width: rem(1200);

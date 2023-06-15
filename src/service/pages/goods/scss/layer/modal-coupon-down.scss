@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+@use "~/scss/common/utils" as *;
+@use "~/scss/common/index" as *;
+
+.layer-wrap {
+  &.modal-coupon-down-wrap {
+    &.center {
+      .layer-scroll,
+      #desktop & .layer-scroll {
+        margin-bottom: rem(76);
+        max-height: rem(447);
+      }
+    }
+
+    .coupon-down-wrap {
+      .sub-title {
+        color: var(--gray-800);
+        font-size: rem(12);
+        line-height: 1.3;
+      }
+
+      .coupon-down-list {
+        li {
+          background: var(--white);
+          border-radius: rem(12);
+          box-shadow: rem(1) rem(3) rem(12) rgba(0, 0, 0, .14);
+          margin-top: rem(8);
+
+          &:first-child {
+            .coupon-wrap {
+              &::after {
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .03) 40%, var(--gray-200) 50%, var(--gray-200) 100%);
+              }
+            }
+          }
+
+          &.disabled {
+            .btn-coupon {
+              cursor: default;
+              pointer-events: none;
+
+              &::before {
+                background-color: var(--gray-300);
+              }
+
+              &::after {
+                background: none;
+                color: var(--white);
+                content: "받기 완료";
+                font-size: rem(12);
+                font-weight: 700;
+                height: rem(28);
+                line-height: 1.2;
+                position: absolute;
+                right: rem(12);
+                text-align: right;
+              }
+
+              .dc-rate,
+              .dc-price,
+              .coupon-name,
+              .date-wrap {
+                color: var(--gray-300);
+              }
+            }
+          }
+        }
+
+        .btn-coupon {
+          background-color: transparent;
+          border: 0;
+          display: block;
+          padding: rem(16);
+          padding-right: rem(62);
+          position: relative;
+          text-align: left;
+          width: 100%;
+
+          &::before {
+            background-color: var(--ns-red);
+            border-radius: 0 rem(12) rem(12) 0;
+            bottom: 0;
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: rem(44);
+          }
+
+          &::after {
+            background: url("/images/icons/goods/btn-icon-cuppon-down02.svg") no-repeat 0 0;
+            background-size: rem(24);
+            content: "";
+            height: rem(24);
+            position: absolute;
+            right: rem(10);
+            top: 50%;
+            transform: translateY(-50%);
+            width: rem(24);
+          }
+        }
+
+        .coupon-wrap {
+          &::after,
+          &::before {
+            border-radius: rem(12);
+            content: "";
+            height: rem(15);
+            position: absolute;
+            right: rem(37);
+            width: rem(15);
+          }
+
+          &::after {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--gray-200) 50%, var(--gray-200) 100%);
+            top: rem(-7.5);
+          }
+
+          &::before {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, var(--gray-200) 50%, var(--gray-200) 100%);
+            bottom: rem(-7.5);
+          }
+
+          .dc-rate,
+          .dc-price {
+            color: var(--ns-red);
+            font-size: rem(20);
+            font-weight: 700;
+            letter-spacing: rem(-.3);
+            line-height: 1;
+            + .coupon-name { margin-top: rem(4);}
+
+            em {
+              font-size: rem(18);
+              font-weight: 400;
+            }
+          }
+
+          .coupon-name {
+            color: var(--gray-900);
+            display: block;
+            font-size: rem(14);
+            font-weight: 500;
+            line-height: 1.3;
+          }
+
+          .date-wrap {
+            color: var(--gray-600);
+            font-size: rem(12);
+            letter-spacing: rem(-.1);
+            margin-top: rem(12);
+
+            span {
+              display: inline-block;
+              line-height: 1;
+              position: relative;
+            }
+
+            span + span {
+              margin-left: rem(9);
+
+              &::before {
+                background-color: var(--gray-300);
+                content: "";
+                height: rem(10);
+                left: rem(-5);
+                position: absolute;
+                top: rem(1);
+                width: rem(1);
+              }
+            }
+
+            .coupon-option {
+              display: block;
+              margin-left: 0;
+              margin-top: rem(4);
+
+              &::before {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .layer-bottom {
+      bottom: 0;
+      box-shadow: 0 rem(-1) rem(2) rgba(0, 0, 0, .04);
+      left: 0;
+      position: absolute;
+      right: 0;
+
+      .bottom-inner {
+        padding: 1.6rem;
+      }
+
+      .coupon-all-bt {
+        @include bg-btn-type($height: rem(44), $font: rem(14), $color: var(--white), $bg-color: var(--gray-900));
+      }
+    }
+  }
+}
